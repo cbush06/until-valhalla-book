@@ -1,0 +1,40 @@
+-D LANGUAGE=en_us
+-D MESSAGESTYLE=neu
+-Fy obj -Fo obj
+-o UntilValhalla.t3
+-lib system
+-lib adv3/adv3
+-source UntilValhalla
+
+-source achievements/CurrentEvents
+-source achievements/HistoryLesson
+-source achievements/MilitaryScience
+-source achievements/ObeyingAuthority
+-source achievements/WhoAmI
+
+-source characters/Me
+-source characters/BailBondsman
+-source characters/CountyRecorder
+-source characters/CourtDefender
+-source characters/JudgeRockwell
+-source characters/NewsVendor
+-source characters/SfcGanci
+
+-source classes/Money
+-source classes/Signable
+-source classes/WritingInstrument
+
+-source lib-mods/ImplicitActionMessages
+
+-source rooms/BailBondsOffice
+-source rooms/CourthouseFoyer
+-source rooms/CourthouseHallway
+-source rooms/CourthouseRecorderOffice
+-source rooms/Courtroom
+-source rooms/GcRecruitingCenter
+-source rooms/NewsStand
+-source rooms/OutsideCourthouse
+-source rooms/OutsideRecruitingCenter
+
+-source verbrules/Purchase
+-source verbrules/Sign

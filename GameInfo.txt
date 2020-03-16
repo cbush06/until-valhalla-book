@@ -1,0 +1,11 @@
+IFID: b8563851-6257-77c3-04ee-278ceaeb48ac
+Name: Until Valhalla
+Byline: by Clinton Bush
+AuthorEmail: Clinton Bush <cbush06@gmail.com>
+Desc: An exciting story about one lost youth's path from failure to glory 
+Version: 1
+ReleaseDate: 2017-06-26
+Language: en-US
+LicenseType: Freeware
+CopyingRules: Nominal cost only; compilations allowed
+PresentationProfile: Default
