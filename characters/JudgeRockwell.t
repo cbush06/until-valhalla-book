@@ -85,7 +85,7 @@ judgeRockwell: Person 'judge donald rockwell/your honor' 'Judge Rockwell' @court
              \b
              Your counselor leaves the courthouse.
              \b
-             <b>The door leading to the hallway is to the East</b>. "
+             <b>The door leading to the hallway is to the North</b>. "
             noteInvocation(actor) {
                 judgeRockwell.setCurState(judgeArraignmentCompleteState);
                 courtDefender.moveInto(nil);

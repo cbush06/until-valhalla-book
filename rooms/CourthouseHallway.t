@@ -23,7 +23,7 @@ courthouseHallway: Room 'Mendocino County Courthouse, Main Hallway'
          arraignment courtroom. "
     ;
 
-    + enterRecorderOffice: Door->exitRecorderOffice 'county recorder\'s office door*doors/recorder office door*doors' 'County Recorder\'s Office Door'
+    + enterRecorderOffice: Door->exitRecorderOffice 'county recorder\'s/recorder/assessor\'s/assessor/clerk\'s/clerk office door*doors' 'County Recorder\'s Office Door'
         specialDesc = "A single office door with a placard reading \'Assessor-Clerk-Recorder\' on it leads
          into the County Recorder\'s office. "
     ;

@@ -4,14 +4,25 @@
 -o UntilValhalla.t3
 -lib system
 -lib adv3/adv3
+
 -source UntilValhalla
 
+# Things
+-source things/chapter1/BirthCertificate
+-source things/chapter1/DriversLicense
+-source things/chapter1/EnlistmentRequirements
+-source things/chapter1/SocialSecurityCard
+-source things/chapter1/TranscriptFile
+
+# Achievements
+-source achievements/NotarizeBirthCertificate
 -source achievements/CurrentEvents
 -source achievements/HistoryLesson
 -source achievements/MilitaryScience
 -source achievements/ObeyingAuthority
 -source achievements/WhoAmI
 
+# Characters
 -source characters/Me
 -source characters/BailBondsman
 -source characters/CountyRecorder
@@ -20,12 +31,15 @@
 -source characters/NewsVendor
 -source characters/SfcGanci
 
+# Classes
 -source classes/Money
 -source classes/Signable
 -source classes/WritingInstrument
 
+# Library Modifications
 -source lib-mods/ImplicitActionMessages
 
+# Rooms
 -source rooms/BailBondsOffice
 -source rooms/CourthouseFoyer
 -source rooms/CourthouseHallway
@@ -36,5 +50,6 @@
 -source rooms/OutsideCourthouse
 -source rooms/OutsideRecruitingCenter
 
+# Verbs
 -source verbrules/Purchase
 -source verbrules/Sign

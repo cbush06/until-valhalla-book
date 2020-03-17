@@ -19,23 +19,21 @@ countyRecorder: Person 'county recorder clerk' 'County Recorder Clerk' @courthou
             specialDesc = "{The countyrecorder/she} gives you a welcoming smile as you enter her office. "
             stateDesc = "{The countyrecorder/she} is smiling at you waiting for you to introduce yourself. "
         ;
-        +++ HelloTopic, StopEventList
-            [ 'Hey, sweetie! Thank you so much for coming by. What can I help you with?<.convnode servicerequest> ',
-              'Good afternoon! I\'m so glad you came by to see me. What can I do for you?<.convnode servicerequest> ',
-              'Hello! It\'s so good to have you drop by today. Is there anything I can do for you?<.convnode servicerequest> '
-            ]
-        ;
-
+            +++ HelloTopic, StopEventList
+                [ 'Hey, sweetie! Thank you so much for coming by. What can I help you with?<.convnode servicerequest> ',
+                'Good afternoon! I\'m so glad you came by to see me. What can I do for you?<.convnode servicerequest> ',
+                'Hello! It\'s so good to have you drop by today. Is there anything I can do for you?<.convnode servicerequest> '
+                ]
+            ;
         ++ countyRecorderPostMeetingReadyState: ConversationReadyState
             specialDesc = "{The countyrecorder/she} is busy stamping some documents and filing them away. "
             stateDesc = "{The countyrecorder/she} is busy stamping some documents and filing them away. "
         ;
-        +++ HelloTopic, StopEventList
-            [ 'Hey, again! What can I do for you?<.convnode servicerequest> ',
-              'I\'m so glad you thought of something I can help you with. What is it?<.convnode servicerequest> '
-            ]
-        ;
-
+            +++ HelloTopic, StopEventList
+                [ 'Hey, again! What can I do for you?<.convnode servicerequest> ',
+                'I\'m so glad you thought of something I can help you with. What is it?<.convnode servicerequest> '
+                ]
+            ;
     + ConvNode 'servicerequest';
         ++ SpecialTopic 'notarize' ['notarize', 'notarize .*']
             topicResponse() {
@@ -52,7 +50,7 @@ countyRecorder: Person 'county recorder clerk' 'County Recorder Clerk' @courthou
 
                 if(notarizeWhat.compareIgnoreCase('birth certificate') == 0) {
                     "She smiles and says, <q>I can certainly do that. If you'll hand it to me,
-                     I'll take care of that right away.</q> ";
+                     I'll take care of that right away.</q><.convstay> ";
                 }
                 else {
                     "With a hint of disappointment in her voice, she says, <q>I'm sorry sweetie, I'm not able to notarize that. 
@@ -60,33 +58,22 @@ countyRecorder: Person 'county recorder clerk' 'County Recorder Clerk' @courthou
                      countyRecorder.setCurState(countyRecorderPostMeetingReadyState);
                 }
             }
-
-            noteInvocation(actor) {
-                /* do something */
+        ;
+        ++ GiveTopic @birthCertificateFile
+            topicResponse {
+                birthCertificateFile.notarize();
+                "She takes the birth certificate, carefully positions her stamp at the bottom, right-hand
+                corner, and squeezes with all her might. When she removes the stamp, you see a perfectly
+                imprinted notary seal.
+                \b
+                Next, she carefully removes the cap from an old Parker fountain pen and signs her
+                notary seal.
+                \b
+                Then she looks up at you with an enormous smile and says, <q>There you go sweetheart!
+                If there's ever anything else I can help you with, you just come right on back. By
+                the way, would you mind signing our registration book by the door? We like to record
+                how helpful we've been!</q>
+                \b
+                She then hands the birth certificate back to you. ";
             }
         ;
-        ++ DefaultAnyTopic
-            "Sadly, she says, <q>I'm sorry sweetie, I can't help you with that.</q> "
-            noteInvocation(actor) {
-                countyRecorder.setCurState(countyRecorderPostMeetingReadyState);
-            }
-        ;
-    
-    + GiveTopic @birthCertificateFile
-        topicResponse() {
-            "She takes the birth certificate, carefully positions her stamp at the bottom, right-hand
-             corner, and squeezes with all her might. When she removes the stamp, you see a perfectly
-             imprinted notary seal.
-             \b
-             Next, she carefully removes the cap from an old Parker fountain pen and signs her
-             notary seal.
-             \b
-             Then she looks up at you with an enormous smile and says, <q>There you go sweetheart!
-             If there's ever anything else I can help you with, you just come right on back. By
-             the way, would you mind signing our registration book by the door? We like to record
-             how helpful we've been!</q>
-             \b
-             She then hands the birth certificate back to you. ";
-             birthCertificateFile.notarize();
-        }
-    ;

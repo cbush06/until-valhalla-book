@@ -1,7 +1,6 @@
 #include <adv3.h>
 #include <en_us.h>
 
-DefineTIAction(PayFor);
 DefineTIAction(BuyFrom);
 
 VerbRule(BuyFrom)
@@ -9,6 +8,8 @@ VerbRule(BuyFrom)
     : BuyFromAction
     verbPhrase = 'purchase/purchasing (what) from (what)'
 ;
+
+DefineTIAction(PayFor);
 
 VerbRule(PayFor)
     'pay' singleDobj 'for' singleIobj
