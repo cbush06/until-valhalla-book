@@ -83,13 +83,13 @@ judgeRockwell: Person 'judge donald rockwell/your honor' 'Judge Rockwell' @court
              \b
              {The judge/he} nods at the bailiff who promptly opens the courtroom doors for you.
              \b
-             Your counselor leaves the courthouse.
-             \b
              <b>The door leading to the hallway is to the North</b>. "
-            noteInvocation(actor) {
+            handleTopic(actor, topic) {
+                inherited(actor, topic);
                 judgeRockwell.setCurState(judgeArraignmentCompleteState);
-                courtDefender.moveInto(nil);
                 exitCourtroomDoor.isOpen = true;
+
+                courtDefender.initiateConversation(postPleaState, 'farewell');
             }
         ;
         ++ SpecialTopic 'not join' ['not join', 'no']

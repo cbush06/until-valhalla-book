@@ -35,6 +35,7 @@ courtDefender: Person 'counselor/lawyer/defender/joke' 'Counselor' @courtroom
                 '<q>Look, just keep on talking your way out of trouble with the judge. What am I here for anyway? It\'s not like I\'m your lawyer or anything.</q> '
             ]
         ;
+
     + postPleaState: InConversationState
         specialDesc = "{The counselor/he} packed all his papers into his folder. He's sitting straight up in his chair as if ready to leave any 
                        minute. "
@@ -46,4 +47,20 @@ courtDefender: Person 'counselor/lawyer/defender/joke' 'Counselor' @courtroom
                 '<q>Look boy, I\'ve got nothing for you. You and the judge have it all worked out.</q> ',
                 '<q>Stop talking to me. It looks like the judge already worked out your case for you.</q> '
             ]
+        ;
+    
+    + ConvNode 'farewell'
+        npcGreetingMsg = "<.p>Your public defender slams his folders shut and fixes his eyes to yours, <q>You little shit! You come in here, strike up a conversation with the Judge, and embarrass the hell out of me! Why did you even ask for a counselor. Here's all your crap. Do you care to ruin my career further or can I get the hell out of here?</q>"
+    ;
+        ++ SpecialTopic 'tell him to fuck off' [ 'fuck', 'off' ]
+            topicResponse() {
+                "<.p><q>Yeah, fuck you too. I'm gone.</q><.p>He picks up his satchel and leaves.";
+                courtDefender.moveInto(nil);
+            }
+        ;
+        ++ SpecialTopic 'just leave' [ 'leave', 'no' ]
+            topicResponse() {
+                "<.p><q>Whatever. I hope you have a shitty death on a shitty planet.</q><.p>He picks up his satchel and leaves.";
+                courtDefender.moveInto(nil);
+            }
         ;

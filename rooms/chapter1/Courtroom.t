@@ -14,6 +14,12 @@ courtroom: Room 'Mendocino County Courthouse, Arraignment Room'
          There are two doors at the back of the room, one on either side. There is a short dais in the front with the judge's desk and a single
          door behind it leading into his quarters. ";
     }
+
+    notifyRemove(obj) {
+        if(obj == courtDefender) {
+            "<.p>Your defender left some files on the table.";
+        }
+    }
     
     north = exitCourtroomDoor
 ;
@@ -34,7 +40,7 @@ courtroom: Room 'Mendocino County Courthouse, Arraignment Room'
 
     + courtroomTable: Surface, Heavy 'large wooden table/desk' 'table'
         /*
-         * Table Contains: Transcript, Birth Certificate, and Social Security Card
+         * Table Contains: Transcript, Enlistment Requirements, Birth Certificate, and Social Security Card
          */
         desc() {
             if(courtDefender.isIn(courtroom)) {
@@ -52,7 +58,7 @@ courtroom: Room 'Mendocino County Courthouse, Arraignment Room'
                  }
 
                  if(!transcriptFile.isListed) {
-                     "You see a file about you on the table. There's also 2 more files hidden below it. You may want to read and take these. ";
+                     "You see a file about you on the table. There's also 3 more files hidden below it. You may want to read and take these. ";
                  }
             }
         }

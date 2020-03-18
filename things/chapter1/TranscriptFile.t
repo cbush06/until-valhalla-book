@@ -17,7 +17,7 @@ transcriptFile: Readable 'transcript file' 'transcript' @courtroomTable
             enlistmentRequirements.isListedInContents = true;
             enlistmentRequirements.discovered = true;
             gDobj.moveInto(gActor);
-            "{You/he} take {the dobj/him} and see another file on the table.\n ";
+            "{You/he} take {the dobj/him} and see another file on the table titled \"Enlistment Requirements.\" It looks like some sort of checklist.\n ";
         }
     }
 

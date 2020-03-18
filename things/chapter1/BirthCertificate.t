@@ -22,7 +22,7 @@ birthCertificateFile: Readable, Hidden 'birth certificate file'
             self.isListedInContents = true;
             inherited();
             ssnCardFile.discovered = true;
-            "{You/he} take {the dobj/him} and see another file on the table.\n ";
+            "{You/he} take {the dobj/him} and see your Social Security Card on the table. You'll probably need that.\n ";
         }
     }
 

@@ -15,21 +15,21 @@
 -source things/chapter1/TranscriptFile
 
 # Achievements
--source achievements/NotarizeBirthCertificate
--source achievements/CurrentEvents
--source achievements/HistoryLesson
--source achievements/MilitaryScience
--source achievements/ObeyingAuthority
--source achievements/WhoAmI
+-source achievements/chapter1/NotarizeBirthCertificate
+-source achievements/chapter1/CurrentEvents
+-source achievements/chapter1/HistoryLesson
+-source achievements/chapter1/MilitaryScience
+-source achievements/chapter1/ObeyingAuthority
+-source achievements/chapter1/WhoAmI
 
 # Characters
 -source characters/Me
--source characters/BailBondsman
--source characters/CountyRecorder
--source characters/CourtDefender
--source characters/JudgeRockwell
--source characters/NewsVendor
--source characters/SfcGanci
+-source characters/chapter1/BailBondsman
+-source characters/chapter1/CountyRecorder
+-source characters/chapter1/CourtDefender
+-source characters/chapter1/JudgeRockwell
+-source characters/chapter1/NewsVendor
+-source characters/chapter1/SfcGanci
 
 # Classes
 -source classes/Money
@@ -40,15 +40,15 @@
 -source lib-mods/ImplicitActionMessages
 
 # Rooms
--source rooms/BailBondsOffice
--source rooms/CourthouseFoyer
--source rooms/CourthouseHallway
--source rooms/CourthouseRecorderOffice
--source rooms/Courtroom
--source rooms/GcRecruitingCenter
--source rooms/NewsStand
--source rooms/OutsideCourthouse
--source rooms/OutsideRecruitingCenter
+-source rooms/chapter1/BailBondsOffice
+-source rooms/chapter1/CourthouseFoyer
+-source rooms/chapter1/CourthouseHallway
+-source rooms/chapter1/CourthouseRecorderOffice
+-source rooms/chapter1/Courtroom
+-source rooms/chapter1/GcRecruitingCenter
+-source rooms/chapter1/NewsStand
+-source rooms/chapter1/OutsideCourthouse
+-source rooms/chapter1/OutsideRecruitingCenter
 
 # Verbs
 -source verbrules/Purchase

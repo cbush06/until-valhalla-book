@@ -25,17 +25,17 @@ newsVendor: Person 'news vendor' 'News Vendor' @newsStand
                just catching a little shuteye. Let me know if you would like to buy anything. They\'re 
                <<timeMagazine.costStr>> each, the Time and Newsweek magazines.
                \b
-               By the way, I just finished an interesting article on the Farshing War. Would you like 
-               to read it?</q> 
-               <.convnode take-article> ',
+               By the way, I just finished an interesting article on the Farshing War. You should give it a read.</q>',
 
               'The old man snaps awake from another light nap. He looks up at you with a familiar smile,
                <q>Howdy again, boy! If you find something you like, magazines are all <<timeMagazine.costStr>>
                a piece. I also have a very interesting article about the Farshing Wars I finished reading
                this morning. It\'s by Dr. Fraunhofer, he\'s got to be one of the greatest minds of the
-               century. Do you wanna borrow it?</q>
-               <.convnode take-article>'
+               century. You should take it with you, the man\'s a genius.</q>'
             ]
+        ;
+        +++ AskTopic @historyArticle
+            "<q>Yeah, I'm not much of a history buff, but Fraunhofer really put the past into a tidy little package. You wanna take it with you?,</q> he asks with a sly little smile. <.convnode take-article>"
         ;
     
     + newsVendorPostGreetingState: InConversationState
@@ -48,11 +48,8 @@ newsVendor: Person 'news vendor' 'News Vendor' @newsStand
             stateDesc = "He's reading the Mendocino Beacon newspaper. "
         ;
         +++ HelloTopic, StopEventList
-            [ 'Putting down his newspaper, the old man asks, <q>Did you change your mind about reading that article?</q>
-               <.convnode takearticle> ',
-
-              'He puts his paper down and gives you friendly smile, <q>If you changed your mind, I\'d still be glad
-               to give you that history paper.</q>'
+            [ "Putting down his newspaper, the old man asks, <q>Did you change your mind about reading that article?</q><.convnode takearticle>",
+              "He puts his paper down and gives you friendly smile, <q>If you changed your mind, I'd still be glad to give you that history paper. What do you say?</q><.convnode takearticle>"
             ]
         ;
     
@@ -80,7 +77,7 @@ newsVendor: Person 'news vendor' 'News Vendor' @newsStand
             }
         ;
 
-    + historyArticle: Hidden, Readable 'history article' 'history article'
+    + historyArticle: Hidden, Readable 'history article' [ 'history', 'article', 'farshing', 'war', 'wars', 'fraunhofer' ]
         read = nil
 
         readDesc() {
@@ -115,7 +112,7 @@ newsVendor: Person 'news vendor' 'News Vendor' @newsStand
              \b
              Skilled manpower had to be developed rapidly and efficiently. The GC created ten
              \ninternational universities, two in each of the United Nation's original, permanent
-             \nmembers (China, France, Russia, the United Kingdom, and the United States). Military
+             \nmembers (China, Germany, Russia, the United Kingdom, and the United States). Military
              \nservice men and women had to be trained, as well. Each of these five nations retrofitted
              \ntheir largest military training centers to train citizens for the GC army and advanced/space
              \nwarfare. A draft was implemented globally to staff both military and civilian occupations.
